@@ -49,34 +49,34 @@ function Meme() {
     }
 
   return (
-    <main>
-        <form className="flex flex-col items-center mt-10 mx-20 h-1/2">
-            <div className="flex justify-center gap-5 w-full">
+    <main className="mx-2">
+        <form className="flex flex-col items-center mt-10 md:mx-20 h-2/3">
+            <div className="md:flex md:justify-center gap-5 w-full">
                 <input 
-                    className="w-1/4 py-2 px-5 border border-solid border-blue-300 rounded-lg outline-none placeholder-blue-300 text-gray-700" 
+                    className="w-full md:w-1/4 py-2 px-5 border border-solid border-blue-300 rounded-lg outline-none placeholder-blue-300 text-gray-700" 
                     type="text" 
                     placeholder="Top Text"
                     value={meme.top}
                     name="top"
                     onChange={handleChange} />
                 <input 
-                    className="w-1/4 py-2 px-5 border border-solid border-blue-300 rounded-lg outline-none placeholder-blue-300 text-gray-700" 
+                    className="w-full md:w-1/4 py-2 px-5 border border-solid border-blue-300 rounded-lg outline-none placeholder-blue-300 text-gray-700" 
                     type="text" 
                     placeholder="Bottom Text"
                     value={meme.bottom}
                     name="bottom"
                     onChange={handleChange} />
             </div>
-            <button onClick={getRandomMeme} className="cursor-pointer mt-6 mb-2 w-3/12 rounded-lg text-center py-2 px-5 text-gray-200 text-lg bg-gradient-to-r from-blue-600 to-blue-900 border-none">
+            <button onClick={getRandomMeme} className="cursor-pointer mt-6 mb-4 w:full md:w-3/12 rounded-lg text-center py-2 px-5 text-gray-200 text-lg bg-gradient-to-r from-blue-600 to-blue-900 border-none">
                 Generate new meme image
             </button>
-            <div className="font-rowdies font-bold text-4xl relative">
+            <div className="font-rowdies relative">
                 <img className="max-w-screen rounded-md " src={meme.url} alt={meme.name} />
                 <Draggable nodeRef={nodeRef1} bounds={"parent"}>
-                    <h2 ref={nodeRef1} className="drop-shadow-[0_0_2px_#000000] text-4xl my-1 py-0 px-1 absolute text-center text-white uppercase tracking-wider top-3 left-1 ">{meme.top}</h2>
+                    <h2 ref={nodeRef1} className="drop-shadow-[0_0_2px_#000000] text-sm md:text-2xl my-1 py-0 px-1 absolute text-center text-white uppercase tracking-wider top-3 left-1 ">{meme.top}</h2>
                 </Draggable>
                 <Draggable nodeRef={nodeRef2} bounds={"parent"}>
-                 <h2 ref={nodeRef2} className="drop-shadow-[0_0_2px_#000000] text-4xl my-1 py-0 px-1 absolute text-center text-white uppercase tracking-wider bottom-3 left-1 ">{meme.bottom}</h2>
+                 <h2 ref={nodeRef2} className="drop-shadow-[0_0_2px_#000000] text-sm md:text-2xl my-1 py-0 px-1 absolute text-center text-white uppercase tracking-wider bottom-3 left-1 ">{meme.bottom}</h2>
                 </Draggable>
                 
                 
